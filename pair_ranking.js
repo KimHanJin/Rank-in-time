@@ -10,6 +10,7 @@ function INPUT_OBJECT(){
   };
   this.setting = function(){ // 셋팅
     console.log('셋팅');
+	this.div.className = 'inputBlank';
     this.div.id = 'pr_' + INPUT_OBJ_QUEUE.count;
     INPUT_OBJ_QUEUE.count++;
     var input = document.createElement('input');
@@ -42,4 +43,11 @@ function addInput(){
 
 function createTable(){
   console.log('createTable()');
+var inputBlank = document.getElementsByClassName('inputBlank');
+	for( i in inputBlank )
+{
+var temp = inputBlank[i].getElementsByTagName('input')[0].value;
+console.log(temp);
+}
+	
 }
