@@ -2,3 +2,8 @@ body
 {
 	text-align:center;
 }
+
+.displayNone
+{
+	display:none;
+}

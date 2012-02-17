@@ -1,19 +1,21 @@
-<!-- -*-coding:utf-8-*- -->
+﻿<!-- -*-coding:utf-8-*- -->
 <html>
-<meta charset="utf-8"/>
-  <head>
-    <script type="text/javascript" src="pair_ranking.js"></script>
-    <link rel="stylesheet" href="index.css" type="text/css" />
-  </head>
-  <body>
-    <h1> 오늘의 할일 </h1>
-    <div id="submit">
-      <input type="button" value="테이블생성" onclick="createTable()"/>
-    </div>
-    <div id="table">
-    </div>
-    <div class="inputBlank" id="pr_0">
-      <input type="text"/><input type="button" name="add" value="추가" onclick="addInput()"/>
-    </div>
-  </body>
+	<meta charset="utf-8"/>
+	<head>
+		<script type="text/javascript" src="pair_ranking.js"></script>
+		<link rel="stylesheet" href="index.css" type="text/css" />
+	</head>
+	<body>
+		<div id="title">
+			<h1> 오늘의 할일 </h1>
+		</div>
+		<div id="submit">
+			<input type="button" value="테이블생성" onclick="createTable()"/>
+			<div class="inputBlank" id="pr_0">
+				<input id="toDo" type="text" placeholder="To Do List를 입력하세요."/><input type="button" name="add" value="추가" onclick="addInput()"/>
+			</div>
+		</div>
+		<div id="table">
+		</div>		
+	</body>
 </html>
