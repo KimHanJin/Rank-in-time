@@ -1,9 +1,42 @@
 body
 {
-	text-align:center;
+    text-align:center;
 }
-
+.fadeOut
+{
+    -webkit-transition:2s ease;
+    opacity:0;
+}
 .displayNone
 {
-	display:none;
+    display:none;
+}
+#table
+{
+    width:100%;
+    text-align:center;
+    align:center;
+}
+.transparent
+{
+    opacity:0;
+}
+.fadeIn
+{
+    -webkit-transition:2s ease;
+    opacity:1;
+}
+table
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 18px;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+    margin:20px auto;
+    align:center;
+}
+#setColor
+{
+    background-color:yellow;
 }
