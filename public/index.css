@@ -40,3 +40,23 @@ table
 {
     background-color:yellow;
 }
+#clock
+{
+    opacity : .8;
+    background-color : chartreuse;
+}
+#cnvs
+{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    width:300px;
+    height:300px;
+    background-color: chartreuse;
+    opacity: .8;
+}
+#cnvs:hover
+{
+    opacity:1;
+    -webkit-transition:.5s ease;
+}

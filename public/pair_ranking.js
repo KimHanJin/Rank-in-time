@@ -21,13 +21,22 @@ function createTable(){
     
     // To Do List를 배열에 쑤셔 넣기
     var inputBlank = document.getElementsByClassName('inputBlank');
-    //var temp = new Array();
     for(var i=0; i < inputBlank.length; i++)
     {
 	var currentDOM = inputBlank[i];
 	TO_DO_LIST.push(inputBlank[i].getElementsByTagName('input')[0].value);
     }
     console.log('To Do Lists are ' + TO_DO_LIST);
+    
+    // 배열을 mongodb에 모두 저장하기(자동완성을 위해서...)
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('POST', 'http://wikicore.cafe24.com:4000/saveList', true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    var json = {};
+    json.list = TO_DO_LIST;
+    var strJSON = JSON.stringify(json);
+    console.log('strJSON = ' + strJSON);
+    xmlhttp.send(strJSON);
 
     // 배열을 기반으로 테이블을 만들기.
     var table = new TABLE_OBJECT(TO_DO_LIST);
@@ -37,6 +46,10 @@ function createTable(){
 
 }
 
+
+/**
+ * 비교순위결정을 하기 위한 키보드 입력 부분
+ */
 document.onkeydown = function(e){
     switch(e.keyCode){
     case 37: // left
@@ -48,4 +61,27 @@ document.onkeydown = function(e){
     default:
 	break;
     }
+}
+
+setInterval(function(){
+    console.log(new Date())
+    document.getElementById('clock').innerText = new Date();
+},1000);
+
+
+
+
+window.onload=function() {
+    var cnvs = document.getElementById("cnvs");
+    if (cnvs.getContext) {
+        var ctx = cnvs.getContext('2d');
+ 
+	// 원 그리기
+	ctx.beginPath();
+	ctx.arc(100, 100, 50, 0, 2*Math.PI, true);
+	ctx.fillStyle = '#00F';
+	ctx.fill();
+	ctx.closePath();
+    }
+    else alert('canvas를 지원하지 않는 브라우저입니다.');
 }
